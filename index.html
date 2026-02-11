@@ -1,88 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Valentine Deploy v2.14.2026</title>
-
-<style>
-body {
-    margin: 0;
-    background: linear-gradient(135deg, #0f0f1a, #1a0033);
-    font-family: Consolas, monospace;
-    color: #EFD6FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-}
-
-.container {
-    max-width: 650px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: #EFD6FF;
-    border: none;
-    font-family: monospace;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-.terminal {
-    margin-top: 20px;
-    background: #000;
-    padding: 20px;
-    border-radius: 8px;
-    color: #00ff88;
-    display: none;
-    text-align: left;
-    min-height: 180px;
-}
-
-.hiddenLetter {
-    display: none;
-    margin-top: 20px;
-    color: #fff;
-    line-height: 1.6;
-}
-
-.commitSection {
-    display: none;
-    margin-top: 20px;
-}
-
-.commitResult {
-    margin-top: 10px;
-    color: #00ff88;
-}
-.floating-heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 18px;
-    animation: floatUp 6s linear forwards;
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-    to {
-        transform: translateY(-110vh);
-        opacity: 0;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Valentines Deploy</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -116,71 +37,7 @@ button:hover {
         <div class="commitResult" id="commitResult"></div>
     </div>
 </div>
-
-<script>
-function deploy() {
-    const terminal = document.getElementById("terminal");
-    const letter = document.getElementById("letter");
-    const commitSection = document.getElementById("commitSection");
-
-    terminal.style.display = "block";
-    terminal.innerHTML = "";
-
-    const lines = [
-        "> Installing love dependencies...",
-        "> Checking emotional compatibility...",
-        "> 100% match found ❤️",
-        "> Refactoring heart architecture...",
-        "> Removing unnecessary drama...",
-        "> Optimizing future together...",
-        "> Building stable release...",
-        "> Deploy successful."
-    ];
-
-    let i = 0;
-
-    function typeLine() {
-        if (i < lines.length) {
-            terminal.innerHTML += lines[i] + "<br>";
-            i++;
-            setTimeout(typeLine, 700);
-        } else {
-            setTimeout(() => {
-                letter.style.display = "block";
-                commitSection.style.display = "block";
-            }, 800);
-        }
-    }
-
-    typeLine();
-}
-
-function commitForever() {
-    const result = document.getElementById("commitResult");
-    result.innerHTML = `
-✔ Commit successful.<br>
-✔ No merge conflicts detected.<br>
-✔ Relationship locked in production ❤️
-    `;
-}
-    // Floating hearts animation
-setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "floating-heart";
-    heart.innerHTML = "❤️";
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 10 + 14) + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-
-}, 500);
-</script>
-
+<script src="scripts.js"></script>
 <!-- 
 If you're inspecting this...
 Yes, I would still choose you in every version of my life.

@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #0f0f1a, #1a0033);
+    font-family: Consolas, monospace;
+    color: #EFD6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 650px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #EFD6FF;
+    border: none;
+    font-family: monospace;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.terminal {
+    margin-top: 20px;
+    background: #000;
+    padding: 20px;
+    border-radius: 8px;
+    color: #00ff88;
+    display: none;
+    text-align: left;
+    min-height: 180px;
+}
+
+.hiddenLetter {
+    display: none;
+    margin-top: 20px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.commitSection {
+    display: none;
+    margin-top: 20px;
+}
+
+.commitResult {
+    margin-top: 10px;
+    color: #00ff88;
+}
+.floating-heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    animation: floatUp 6s linear forwards;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}

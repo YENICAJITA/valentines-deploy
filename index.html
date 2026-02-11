@@ -63,6 +63,25 @@ button:hover {
     margin-top: 10px;
     color: #00ff88;
 }
+.floating-heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    animation: floatUp 6s linear forwards;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
 </style>
 </head>
 
@@ -144,6 +163,22 @@ function commitForever() {
 ✔ Relationship locked in production ❤️
     `;
 }
+    // Floating hearts animation
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 10 + 14) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+
+}, 500);
 </script>
 
 <!-- 

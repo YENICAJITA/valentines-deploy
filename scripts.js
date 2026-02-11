@@ -36,12 +36,32 @@ function deploy() {
 }
 
 function commitForever() {
-    const result = document.getElementById("commitResult");
-    result.innerHTML = `
-✔ Commit successful.<br>
-✔ No merge conflicts detected.<br>
-✔ Relationship locked in production ❤️
-    `;
+    const pipeline = document.getElementById("pipeline");
+    const fill = document.getElementById("progressFill");
+    const text = document.getElementById("pipelineText");
+
+    pipeline.style.display = "block";
+
+    let progress = 0;
+
+    const interval = setInterval(() => {
+        progress += 10;
+        fill.style.width = progress + "%";
+
+        if (progress === 30) text.innerText = "Running tests...";
+        if (progress === 60) text.innerText = "No merge conflicts detected...";
+        if (progress === 80) text.innerText = "Pushing to production...";
+        if (progress === 100) {
+            text.innerText = "Deployment successful ❤️";
+            clearInterval(interval);
+
+            setTimeout(() => {
+                document.getElementById("finalSection")
+                    .scrollIntoView({ behavior: "smooth" });
+            }, 1000);
+        }
+
+    }, 300);
 }
     // Floating hearts animation
 setInterval(() => {

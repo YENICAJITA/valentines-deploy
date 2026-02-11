@@ -35,6 +35,14 @@
     <div class="commitSection" id="commitSection">
         <button onclick="commitForever()">git commit -m "Forever"</button>
         <div class="commitResult" id="commitResult"></div>
+        <div class="pipeline" id="pipeline">
+            <div class="progressBar">
+                <div class="progressFill" id="progressFill"></div>
+            </div>
+            <p id="pipelineText">
+                Waiting for deployment...
+            </p>
+        </div>
     </div>
 </div>
 <script src="scripts.js"></script>

@@ -124,8 +124,8 @@ button:hover {
 /* Rotaciones cute */
 #photo1 { top: 15vh; transform: rotate(-6deg); }
 #photo2 { top: 20vh; transform: rotate(5deg); }
-#photo3 { top: 55vh; transform: rotate(4deg); }
-#photo4 { top: 60vh; transform: rotate(-4deg); }
+#photo3 { top: 65vh; transform: rotate(4deg); }
+#photo4 { top: 75vh; transform: rotate(-4deg); }
 
 .hidden {
     opacity: 0;

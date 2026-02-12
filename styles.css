@@ -69,7 +69,7 @@ button:hover {
     margin-top: 20px;
     display: none;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .progressBar {
@@ -91,8 +91,8 @@ button:hover {
     position: fixed;
     width: 160px;
     background: white;
-    padding: 10px 10px 25px 10px;
-    border-radius: 8px;
+    padding: 10px 10px 35px 10px;
+    border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     transition: all 0.8s ease;
     z-index: 3;
@@ -100,7 +100,7 @@ button:hover {
 
 .polaroid img {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 /* Posiciones */
@@ -124,8 +124,8 @@ button:hover {
 /* Rotaciones cute */
 #photo1 { top: 15vh; transform: rotate(-6deg); }
 #photo2 { top: 20vh; transform: rotate(5deg); }
-#photo3 { top: 55vh; transform: rotate(-4deg); }
-#photo4 { top: 60vh; transform: rotate(6deg); }
+#photo3 { top: 55vh; transform: rotate(4deg); }
+#photo4 { top: 60vh; transform: rotate(-4deg); }
 
 .hidden {
     opacity: 0;

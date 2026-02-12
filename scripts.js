@@ -73,6 +73,11 @@ function commitForever() {
                 document.getElementById("photo3").classList.remove("hidden");
                 document.getElementById("photo3").classList.add("show");
             }, 1500);
+
+            setTimeout(() => {
+                document.getElementById("photo4").classList.remove("hidden");
+                document.getElementById("photo4").classList.add("show");
+            }, 2000);
         }
 
     }, 300);

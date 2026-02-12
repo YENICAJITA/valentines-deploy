@@ -125,6 +125,7 @@ button:hover {
 #photo1 { top: 20%; transform: rotate(-8deg); }
 #photo2 { top: 45%; transform: rotate(6deg); }
 #photo3 { top: 70%; transform: rotate(-4deg); }
+#photo4 { top: 85%; transform: rotate(5deg); }
 
 .hidden {
     opacity: 0;

@@ -28,6 +28,12 @@ function deploy() {
             setTimeout(() => {
                 letter.style.display = "block";
                 commitSection.style.display = "block";
+                setTimeout(()=>{
+                    letter.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                },100);
             }, 800);
         }
     }

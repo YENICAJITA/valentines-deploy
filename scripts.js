@@ -34,6 +34,12 @@ function deploy() {
                         block: "center"
                     });
                 },100);
+                setTimeout(()=>{
+                    commitSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                },100);
             }, 800);
         }
     }
@@ -63,7 +69,7 @@ function commitForever() {
 
             setTimeout(() => {
                 document.getElementById("finalSection")
-                    .scrollIntoView({ behavior: "smooth" });
+                    .scrollIntoView({ behavior: "smooth", block: "center"});
             }, 1000);
             setTimeout(() => {
                 document.getElementById("photo1").classList.remove("hidden");

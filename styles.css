@@ -13,6 +13,7 @@ body {
 
 .container {
     max-width: 650px;
+    position: relative;
 }
 
 button {
@@ -87,7 +88,7 @@ button:hover {
     transition: width 0.3s ease;
 }
 .polaroid {
-    position: fixed;
+    position: absolute;
     width: 180px;
     background: white;
     padding: 10px 10px 25px 10px;

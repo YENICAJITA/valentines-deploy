@@ -89,13 +89,13 @@ button:hover {
 }
 .polaroid {
     position: fixed;
-    width: 180px;
+    width: 160px;
     background: white;
     padding: 10px 10px 25px 10px;
     border-radius: 8px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    transition: all 1s ease;
-    z-index: 10;
+    transition: all 0.8s ease;
+    z-index: 3;
 }
 
 .polaroid img {
@@ -105,27 +105,27 @@ button:hover {
 
 /* Posiciones */
 .left {
-    left: -250px;
+    left: -220px;
 }
 
 .right {
-    right: -250px;
+    right: -220px;
 }
 
 /* Cuando aparecen */
 .show.left {
-    left: 30px;
+    left: 25px;
 }
 
 .show.right {
-    right: 30px;
+    right: 25px;
 }
 
 /* Rotaciones cute */
-#photo1 { top: 20%; transform: rotate(-8deg); }
-#photo2 { top: 45%; transform: rotate(6deg); }
-#photo3 { top: 70%; transform: rotate(-4deg); }
-#photo4 { top: 85%; transform: rotate(5deg); }
+#photo1 { top: 18%; transform: rotate(-6deg); }
+#photo2 { top: 38%; transform: rotate(5deg); }
+#photo3 { top: 58%; transform: rotate(-4deg); }
+#photo4 { top: 78%; transform: rotate(6deg); }
 
 .hidden {
     opacity: 0;
@@ -143,5 +143,40 @@ button:hover {
     to {
         transform: translateY(-110vh);
         opacity: 0;
+    }
+}
+@media (max-width: 900px) {
+    .polaroid {
+        width: 120px;
+    }
+
+    .show.left {
+        left: 10px;
+    }
+
+    .show.right {
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .polaroid {
+        position: relative;
+        width: 85%;
+        max-width: 280px;
+        margin: 20px auto;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: rotate(0deg) !important;
+    }
+
+    .left,
+    .right,
+    .show.left,
+    .show.right {
+        left: auto;
+        right: auto;
     }
 }

@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    background: linear-gradient(135deg, #0f0f1a, #1a0033);
+    background: linear-gradient(135deg, #0f0f1a, #1e1b2e);
     font-family: Consolas, monospace;
-    color: #EFD6FF;
+    color: #f5f3ff;
     min-height: 100vh;
     text-align: center;
     overflow-x: hidden;
@@ -12,14 +12,15 @@ body {
     max-width: 650px;
     position: relative;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 50px;
     position: relative;
 }
 
 button {
     margin-top: 20px;
     padding: 12px 24px;
-    background: #EFD6FF;
+    background: #a78bfa;
+    color: #0f0f1a;
     border: none;
     font-family: monospace;
     cursor: pointer;
@@ -28,14 +29,15 @@ button {
 
 button:hover {
     opacity: 0.9;
+    background: #c4b5fd;
 }
 
 .terminal {
     margin-top: 20px;
-    background: #000;
+    background: #1c1c2b;
     padding: 20px;
     border-radius: 8px;
-    color: #00ff88;
+    color: #3fb950;
     display: none;
     text-align: left;
     min-height: 180px;
@@ -55,7 +57,7 @@ button:hover {
 
 .commitResult {
     margin-top: 10px;
-    color: #00ff88;
+    color: #3fb950;
 }
 .floating-heart {
     position: fixed;
@@ -96,11 +98,27 @@ button:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     transition: all 0.8s ease;
     z-index: 3;
+    position: fixed;
 }
 
 .polaroid img {
     width: 100%;
+    display: block;
     border-radius: 5px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #a78bfa;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    
 }
 
 /* Posiciones */
@@ -134,6 +152,76 @@ button:hover {
 .show {
     opacity: 1;
 }
+.envelope-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+/* Sobre */
+.envelope {
+    position: relative;
+    width: 90%;            /* ocupa el 90% del ancho de la pantalla */
+    max-width: 650px;      /* nunca más de 650px en pantallas grandes */
+    aspect-ratio: 650 / 350; /* mantiene la proporción original */
+    background: #1e1b2e;
+    border: 2px solid #a78bfa;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 25px 60px rgba(167,139,250,0.2);
+    margin: 20px auto;
+}
+
+/* Solapa */
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: #a78bfa;
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 3;
+}
+
+/* Carta interna */
+.letter {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: #1c1c2b;
+    color: #d8d4ff;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Courier New", monospace;
+    transition: bottom 1s ease;
+}
+
+/* Animación abierta */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+    bottom: 0;
+}
+
+.click-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
 
 @keyframes floatUp {
     from {
@@ -157,9 +245,14 @@ button:hover {
     .show.right {
         right: 10px;
     }
+    .envelope{
+        width: 90%;            /* ocupa el 90% del ancho de la pantalla */
+        max-width: 650px;      /* nunca más de 650px en pantallas grandes 
+        aspect-ratio: 650 / 950; /* mantiene la proporción original */
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .polaroid {
         position: relative;
@@ -178,5 +271,10 @@ button:hover {
     .show.right {
         left: auto;
         right: auto;
+    }
+    .envelope{
+        width: 90%;            /* ocupa el 90% del ancho de la pantalla */
+        max-width: 650px;      /* nunca más de 650px en pantallas grandes */
+        aspect-ratio: 650 / 950; /* mantiene la proporción original */
     }
 }

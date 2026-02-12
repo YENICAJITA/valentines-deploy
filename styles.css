@@ -86,6 +86,52 @@ button:hover {
     background: #3fb950;
     transition: width 0.3s ease;
 }
+.polaroid {
+    position: fixed;
+    width: 180px;
+    background: white;
+    padding: 10px 10px 25px 10px;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: all 1s ease;
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Posiciones */
+.left {
+    left: -250px;
+}
+
+.right {
+    right: -250px;
+}
+
+/* Cuando aparecen */
+.show.left {
+    left: 30px;
+}
+
+.show.right {
+    right: 30px;
+}
+
+/* Rotaciones cute */
+#photo1 { top: 20%; transform: rotate(-8deg); }
+#photo2 { top: 45%; transform: rotate(6deg); }
+#photo3 { top: 70%; transform: rotate(-4deg); }
+
+.hidden {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
 
 @keyframes floatUp {
     from {

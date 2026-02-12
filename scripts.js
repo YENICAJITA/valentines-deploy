@@ -59,6 +59,20 @@ function commitForever() {
                 document.getElementById("finalSection")
                     .scrollIntoView({ behavior: "smooth" });
             }, 1000);
+            setTimeout(() => {
+                document.getElementById("photo1").classList.remove("hidden");
+                document.getElementById("photo1").classList.add("show");
+            }, 500);
+            
+            setTimeout(() => {
+                document.getElementById("photo2").classList.remove("hidden");
+                document.getElementById("photo2").classList.add("show");
+            }, 1000);
+            
+            setTimeout(() => {
+                document.getElementById("photo3").classList.remove("hidden");
+                document.getElementById("photo3").classList.add("show");
+            }, 1500);
         }
 
     }, 300);

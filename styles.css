@@ -122,10 +122,10 @@ button:hover {
 }
 
 /* Rotaciones cute */
-#photo1 { top: 18%; transform: rotate(-6deg); }
-#photo2 { top: 38%; transform: rotate(5deg); }
-#photo3 { top: 58%; transform: rotate(-4deg); }
-#photo4 { top: 78%; transform: rotate(6deg); }
+#photo1 { top: 15%; transform: rotate(-6deg); }
+#photo2 { top: 25%; transform: rotate(5deg); }
+#photo3 { top: 55%; transform: rotate(-4deg); }
+#photo4 { top: 65%; transform: rotate(6deg); }
 
 .hidden {
     opacity: 0;

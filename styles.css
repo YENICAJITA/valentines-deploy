@@ -3,16 +3,16 @@ body {
     background: linear-gradient(135deg, #0f0f1a, #1a0033);
     font-family: Consolas, monospace;
     color: #EFD6FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     text-align: center;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 650px;
+    position: relative;
+    margin: 0 auto;
+    padding: 60px 20px;
     position: relative;
 }
 
@@ -88,7 +88,7 @@ button:hover {
     transition: width 0.3s ease;
 }
 .polaroid {
-    position: absolute;
+    position: fixed;
     width: 180px;
     background: white;
     padding: 10px 10px 25px 10px;

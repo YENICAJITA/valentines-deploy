@@ -154,9 +154,8 @@ button:hover {
 }
 .envelope-container {
     display: none;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
+    width: 100%;
+    padding: 40px 0;
 }
 
 /* Sobre */
@@ -188,17 +187,16 @@ button:hover {
 
 /* Carta interna */
 .letter {
-    position: absolute;
-    bottom: -100%;
-    width: 100%;
-    height: 100%;
+    position: relative;          /* 👈 ya no absolute */
+    transform: scaleY(0);        /* empieza cerrada */
+    transform-origin: top;       /* crece hacia abajo */
+    transition: transform 0.5s ease;
     background: #1c1c2b;
     color: #d8d4ff;
     padding: 20px;
     box-sizing: border-box;
-    font-family: "Courier New", monospace;
-    transition: bottom 1s ease;
 }
+
 
 /* Animación abierta */
 .envelope.open .flap {
@@ -206,21 +204,40 @@ button:hover {
 }
 
 .envelope.open .letter {
-    bottom: 0;
+    transform: scaleY(1);
 }
 
-.click-text {
+/*.click-text {
     position: absolute;
     width: 100%;
     text-align: center;
     top: 50%;
+    bottom: 15px;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: #fff;
     pointer-events: none;
     opacity: 0.9;
+    z-index: 10;
+}*/
+.click-text {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    
+    width: 90%;
+    text-align: center;
+
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: white;
+
+    z-index: 10;
 }
+
 
 
 @keyframes floatUp {
@@ -275,6 +292,119 @@ button:hover {
     .envelope{
         width: 90%;            /* ocupa el 90% del ancho de la pantalla */
         max-width: 650px;      /* nunca más de 650px en pantallas grandes */
-        aspect-ratio: 650 / 950; /* mantiene la proporción original */
+        aspect-ratio: auto; /* mantiene la proporción original */
+    }
+}
+#typedText::after {
+    content: "|";
+    margin-left: 4px;
+    animation: blink 1s infinite;
+    color: #a78bfa;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.finalMessage {
+    display: none;
+    margin-top: 40px;
+    padding: 30px;
+    border: 2px solid #a78bfa;
+    border-radius: 15px;
+    background: #1c1c2b;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.finalMessage h2 {
+    margin-bottom: 15px;
+}
+
+.finalMessage button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #a78bfa;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.finalMessage button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mensaje gigante final */
+/*.bigLoveMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+}*/
+.bigLoveMessage {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+    padding: 20px;
+
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.bigContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    max-width: 900px;
+    width: 100%;
+}
+
+.bigContent img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.bigText {
+    color: white;
+}
+
+.bigText h1 {
+    font-size: clamp(24px, 5vw, 40px);
+}
+
+.bigText p {
+    margin-top: 15px;
+    font-size: clamp(16px, 3.5vw, 20px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bigContent {
+        flex-direction: column;
+        text-align: center;
     }
 }

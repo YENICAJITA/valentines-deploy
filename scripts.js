@@ -85,6 +85,21 @@ function commitForever() {
                 document.getElementById("photo4").classList.remove("hidden");
                 document.getElementById("photo4").classList.add("show");
             }, 2000);
+            setTimeout(() => {
+                const final = document.getElementById("finalMessage");
+        
+                final.style.display = "block";
+        
+                // 🔥 Scroll suave hacia el mensaje
+                final.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+        
+            }, 2000); // espera a que termine el deploy visual
+            setTimeout(() => {
+                document.getElementById("finalMessage").style.display = "block";
+            }, 2500);
         }
 
     }, 300);
@@ -148,6 +163,8 @@ function typeWriter() {
             // reemplaza saltos de línea por <br> en HTML
             const char = message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
             typedText.innerHTML += char;
+            const letterBox = document.querySelector(".letter");
+            letterBox.style.maxHeight = letterBox.scrollHeight + "px";
             i++;
             setTimeout(typing, speed);
         }else {
@@ -167,3 +184,63 @@ function typeWriter() {
 
     typing();
 }
+/*document.addEventListener("click", function(e) {
+
+    if (e.target && e.target.id === "yesBtn") {
+
+        // Evita que cree varios mensajes si presionan muchas veces
+        if (document.querySelector(".bigLoveMessage")) return;
+
+        // Cambiar fondo
+        document.body.style.background =
+            "linear-gradient(135deg, #2a0f2f, #3b1c3c)";
+
+        // Crear mensaje grande
+        const bigMessage = document.createElement("div");
+        bigMessage.className = "bigLoveMessage";
+        bigMessage.innerHTML = `
+            Forever deployed ♾️💜<br>
+            Yenifer & Florian
+        `;
+
+        document.body.appendChild(bigMessage);
+
+        // Opcional: ocultar el botón después de presionar
+        e.target.style.display = "none";
+    }
+});
+*/
+document.addEventListener("click", function(e) {
+
+    if (e.target && e.target.id === "yesBtn") {
+
+        if (document.querySelector(".bigLoveMessage")) return;
+
+        const bigMessage = document.createElement("div");
+        bigMessage.className = "bigLoveMessage";
+
+        bigMessage.innerHTML = `
+            <div class="bigContent">
+                <img src="images/fotofinal.jpg" alt="us">
+
+                <div class="bigText">
+                    <h1>Forever Deployed ♾️💜</h1>
+                    <p>
+                        Yenifer & Florian<br><br>
+                        No rollbacks.<br>
+                        No branches.<br>
+                        Just us.
+                    </p>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(bigMessage);
+
+        // cerrar al tocar fondo
+        bigMessage.addEventListener("click", () => {
+            bigMessage.remove();
+        });
+    }
+});
+

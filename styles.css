@@ -112,20 +112,11 @@ button:hover {
     45% { transform: scale(1.25); }
     60% { transform: scale(1); }
 }
-  
-  
+ 
 /* Parpadeo PRESS START */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
-}
-
-.hiddenLetter {
-    width: 100%;
-    display: none;
-    margin-top: 20px;
-    line-height: 1.6;
-    color: #fff;
 }
 
 .commitSection {
@@ -229,12 +220,27 @@ button:hover {
     padding: 40px 0;
 }
 
-/* Sobre */
+/* Sobre 
 .envelope {
     position: relative;
-    width: 100%;            /* ocupa el 90% del ancho de la pantalla */
-    max-width: 650px;      /* nunca más de 650px en pantallas grandes */
-    aspect-ratio: 650 / 350; /* mantiene la proporción original */
+    width: 100%;            /* ocupa el 90% del ancho de la pantalla 
+    max-width: 650px;      /* nunca más de 650px en pantallas grandes 
+    aspect-ratio: 650 / 350; /* mantiene la proporción original 
+    background: #1e1b2e;
+    border: 2px solid #a78bfa;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 25px 60px rgba(167,139,250,0.2);
+    margin: 20px auto;
+}*/
+.envelope {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 350px;   /* 👈 solo altura mínima */
+    
     background: #1e1b2e;
     border: 2px solid #a78bfa;
     cursor: pointer;
@@ -243,6 +249,8 @@ button:hover {
     box-shadow: 0 25px 60px rgba(167,139,250,0.2);
     margin: 20px auto;
 }
+
+
 
 /* Solapa */
 .flap {
@@ -268,12 +276,14 @@ button:hover {
     box-sizing: border-box;
     font-family: 'Fira Code', monospace;
     letter-spacing: 0.5px;
+    max-height: none;
 }
 
 
 /* Animación abierta */
 .envelope.open .flap {
     transform: rotateX(180deg);
+    height: fit-content;
 }
 
 .envelope.open .letter {

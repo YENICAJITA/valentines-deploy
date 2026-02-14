@@ -6,14 +6,19 @@ function deploy() {
     terminal.innerHTML = "";
 
     const lines = [
-        "> Installing love dependencies...",
-        "> Checking emotional compatibility...",
+        "> Cloning repository: us.git 💻💞",
+        "> Fetching shared memories... 📂",
+        "> Installing love dependencies... 💾💖",
+        "> Running compatibility tests... 🧪❤️",
         "> 100% match found ❤️",
-        "> Refactoring heart architecture...",
-        "> Removing unnecessary drama...",
-        "> Optimizing future together...",
-        "> Building stable release...",
-        "> Deploy successful."
+        "> All tests passed. ✅💓",
+        "> Refactoring heart architecture... 🛠️💗",
+        "> Removing unnecessary drama... 🧹🚫",
+        "> Resolving conflicts... none found. 🤝✨",
+        "> Merging branches: you + me 🌿💑",
+        "> Optimizing future together... 👫💞",
+        "> Building stable release... 🏗️💖",
+        "> Deployment successful. 🚀❤️✨"
     ];
 
     let i = 0;
@@ -26,6 +31,7 @@ function deploy() {
         } else {
             setTimeout(() => {
                 document.querySelector(".envelope-container").style.display = "flex";
+                
                 setTimeout(()=>{
                     document.querySelector(".envelope-container").scrollIntoView({
                         behavior: "smooth",
@@ -33,6 +39,7 @@ function deploy() {
                     });
                 },100);
             }, 800);
+
         }
     }
 
@@ -58,11 +65,11 @@ function commitForever() {
         progress += 10;
         fill.style.width = progress + "%";
 
-        if (progress === 30) text.innerText = "Running tests...";
-        if (progress === 60) text.innerText = "No merge conflicts detected...";
-        if (progress === 80) text.innerText = "Pushing to production...";
+        if (progress === 30) text.innerText = "Running tests... 🧪💻";
+        if (progress === 60) text.innerText = "No merge conflicts detected... 🤝✨";
+        if (progress === 80) text.innerText = "Pushing to production... 🚀💘";
         if (progress === 100) {
-            text.innerText = "Deployment successful ❤️";
+            text.innerText = "Deployment successful 🚀❤️✨";
             clearInterval(interval);
 
             
@@ -126,7 +133,7 @@ const envelope = document.getElementById("envelope");
 const typedText = document.getElementById("typedText");
 const clickText = document.querySelector(".click-text");
 
-const message = 
+const messages = 
 "You are my best commit.\n" +
 "My favorite feature.\n" +
 "My most stable version.\n\n" +
@@ -136,7 +143,13 @@ const message =
 "If life were a repository,\n" +
 "I'd choose you in every branch.\n" +
 "And I would never roll back.";
-
+const message2 ="You make my world brighter, my heart lighter, and my life sweeter every single day. Im so grateful for your love, your smile, and the way you make everything feel magical. Im lucky to have you today and always. ❤️";
+const message=
+"Baby,\n" + 
+"Happy Valentine’s Day to the most amazing boyfriend in the world. Even tho you’re on the other side of the world, I feel your love and support every single day. We might be km apart, but what I feel for you just keeps growing,\n\n" +
+"I truly appreciate the way you always encourage me, listen to me, and stand by my side no matter what.\n I honestly can’t explain how much it means to have you by my side. You make me feel loved, understood, and safe, even in the distance.\n\n" +
+"I miss you more than I ever thought I could miss someone, but I’m so grateful we have each other. Thank you for caring me the way you do. I can’t wait for the day we can finally be together, in the same place, wrapped in each other’s arms.\n\n" +
+"Im lucky to have you today and always. ❤️"
 
 let opened = false;
 
@@ -161,7 +174,7 @@ function typeWriter() {
             const char = message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
             typedText.innerHTML += char;
             const letterBox = document.querySelector(".letter");
-            letterBox.style.maxHeight = letterBox.scrollHeight + "px";
+            /*letterBox.style.maxHeight = letterBox.scrollHeight + "px";*/
             i++;
             setTimeout(typing, speed);
         }else {
@@ -198,9 +211,9 @@ document.addEventListener("click", function(e) {
                 <div class="bigText">
                     <h1>Forever Deployed 💖</h1>
                     <p>
-                        Yenifer & Florian<br><br>
-                        No rollbacks.<br>
-                        No branches.<br>
+                        Yeni & Florian 💖<br><br>
+                        <br>
+                        <br>
                         Just us.
                     </p>
                 </div>

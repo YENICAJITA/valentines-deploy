@@ -96,10 +96,7 @@ function commitForever() {
                     block: "center"
                 });
         
-            }, 2000); // espera a que termine el deploy visual
-            setTimeout(() => {
-                document.getElementById("finalMessage").style.display = "block";
-            }, 2500);
+            }, 2500); // espera a que termine el deploy visual
         }
 
     }, 300);
@@ -184,35 +181,10 @@ function typeWriter() {
 
     typing();
 }
-/*document.addEventListener("click", function(e) {
-
-    if (e.target && e.target.id === "yesBtn") {
-
-        // Evita que cree varios mensajes si presionan muchas veces
-        if (document.querySelector(".bigLoveMessage")) return;
-
-        // Cambiar fondo
-        document.body.style.background =
-            "linear-gradient(135deg, #2a0f2f, #3b1c3c)";
-
-        // Crear mensaje grande
-        const bigMessage = document.createElement("div");
-        bigMessage.className = "bigLoveMessage";
-        bigMessage.innerHTML = `
-            Forever deployed ♾️💜<br>
-            Yenifer & Florian
-        `;
-
-        document.body.appendChild(bigMessage);
-
-        // Opcional: ocultar el botón después de presionar
-        e.target.style.display = "none";
-    }
-});
-*/
 document.addEventListener("click", function(e) {
 
     if (e.target && e.target.id === "yesBtn") {
+        explosionSanValentin();
 
         if (document.querySelector(".bigLoveMessage")) return;
 
@@ -224,7 +196,7 @@ document.addEventListener("click", function(e) {
                 <img src="images/fotofinal.jpg" alt="us">
 
                 <div class="bigText">
-                    <h1>Forever Deployed ♾️💜</h1>
+                    <h1>Forever Deployed 💖</h1>
                     <p>
                         Yenifer & Florian<br><br>
                         No rollbacks.<br>
@@ -240,7 +212,95 @@ document.addEventListener("click", function(e) {
         // cerrar al tocar fondo
         bigMessage.addEventListener("click", () => {
             bigMessage.remove();
+            const countdown = document.querySelector(".countdown-wrapper");
+            countdown.style.display = "block";
+
+            setTimeout(() => {
+                countdown.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+                });
+            }, 200);
         });
     }
 });
+function actualizarCountdown() {
+    const ahora = new Date();
+    const añoActual = ahora.getFullYear();
+  
+    let fechaObjetivo = new Date(`May 14, ${añoActual} 00:00:00`);
+  
+    if (ahora > fechaObjetivo) {
+      fechaObjetivo = new Date(`May 14, ${añoActual + 1} 00:00:00`);
+    }
+  
+    const diferencia = fechaObjetivo - ahora;
+  
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+  
+    const elemento = document.getElementById("countdown");
+    if (!elemento) return;
+  
+    elemento.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  }
+  
+  setInterval(actualizarCountdown, 1000);
+  actualizarCountdown();
+  
+  function crearCorazonCountdown() {
+    const container = document.querySelector(".hearts-container-countdown");
+    if (!container) return;
+  
+    const heart = document.createElement("span");
+    heart.classList.add("floating-heart-countdown");
+    heart.innerHTML = "❤";
+  
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+  
+    container.appendChild(heart);
+  
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+  
+setInterval(crearCorazonCountdown, 600);
+crearCorazonCountdown();
 
+function explosionSanValentin() {
+
+    const total = 60;
+  
+    for (let i = 0; i < total; i++) {
+  
+      const heart = document.createElement("div");
+      heart.className = "valentine-explosion";
+  
+      const emojis = ["❤️", "💖", "💘"];
+      heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+  
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = Math.random() * 100 + "vh";
+  
+      heart.style.fontSize = (Math.random() * 15 + 20) + "px";
+  
+      document.body.appendChild(heart);
+  
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+  }
+  const startScreen = document.getElementById("startScreen");
+
+  startScreen.addEventListener("click", () => {
+    startScreen.style.opacity = "0";
+  
+    setTimeout(() => {
+      startScreen.style.display = "none";
+    }, 1000);
+  });

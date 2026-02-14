@@ -4,19 +4,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentines Deploy</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <div id="startScreen">
+        <div class="start-content">
+          <div class="pixel-heart"></div>
+          <p class="press-start">PRESS START</p>
+        </div>
+      </div>
 <div class="container">
-    <h1>Valentine Deploy v2.14.2026 ❤️</h1>
+    <h1>Happy Valentine's Deploy 2.14.2026 ❤️</h1>
+    <br/>
+    <br/>
     <p>Release type: Stable</p>
     <p>Environment: Production</p>
     <button onclick="deploy()">npm run valentine</button>
+    
+    <div class="terminal card-ui" id="terminal"></div>
 
-    <div class="terminal" id="terminal"></div>
-
-    <div class="hiddenLetter" id="letter">
+    <div class="hiddenLetter card-ui" id="hiddenLetter">
         <h2>Happy Valentine’s Day ❤️</h2>
         <p>
         Eres mi mejor commit.<br>
@@ -53,36 +62,49 @@
             </p>
         </div>
     </div>
-    <div class="finalMessage" id="finalMessage">
+    <div class="finalMessage card-ui" id="finalMessage">
         <h2>Yenifer & Florian ♾️</h2>
         <p>
             If life were a repository,<br>
             I’d choose you in every branch.<br><br>
-            Will you keep deploying forever with me? 💜
+            Will you keep deploying forever with me? 💖
         </p>
     
         <button id="yesBtn">Always ❤️</button>
+    </div>
+    <div class="countdown-wrapper card-ui">
+        <h2 class="mystery-title">Something beautiful is coming ✨</h2>   
+        <p class="countdown-title">
+            Counting down until I get to hold you 
+          <span class="heart">❤</span>
+        </p>
+        <div id="countdown" class="countdown-box"></div>
+        <p class="soft-note">Every second brings you closer 💗</p>
+        <div class="hearts-container-countdown"></div>
     </div>
     <!-- 
     If you're inspecting this...
     Yes, I would still choose you in every version of my life.
     -->
-    <div class="polaroid left hidden" id="photo1">
-        <img src="images/IMG_8691.jpg">
-        <span class="caption">chapter: us 📖💘</span>
+    <div class="mobile-gallery">
+        <div class="polaroid left hidden" id="photo1">
+            <img src="images/IMG_8691.jpg">
+            <span class="caption">chapter: us 📖💘</span>
+        </div>
+        <div class="polaroid right hidden" id="photo2">
+            <img src="images/IMG_8692.jpg">
+            <span class="caption">better together 💞</span>
+        </div>
+        <div class="polaroid left hidden" id="photo3">
+            <img src="images/IMG_8693.jpg">
+            <span class="caption">my favorite person 🤍</span>
+        </div>
+        <div class="polaroid right hidden" id="photo4">
+            <img src="images/IMG_8695.jpg">
+            <span class="caption">with you, always 🤞💞</span>
+        </div>
     </div>
-    <div class="polaroid right hidden" id="photo2">
-        <img src="images/IMG_8692.jpg">
-        <span class="caption">better together 💞</span>
-    </div>
-    <div class="polaroid left hidden" id="photo3">
-        <img src="images/IMG_8693.jpg">
-        <span class="caption">my favorite person 🤍</span>
-    </div>
-    <div class="polaroid right hidden" id="photo4">
-        <img src="images/IMG_8695.jpg">
-        <span class="caption">with you, always 🤞💞</span>
-    </div>
+    
     
     
 </div>
